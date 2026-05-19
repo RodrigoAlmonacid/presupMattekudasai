@@ -9,6 +9,6 @@ export default defineConfig({
     tailwindcss()
   ],
   build: {
-    outDir: 'build', // OBLIGA A VITE A USAR LA CARPETA "build"
+    outDir: 'dist', // OBLIGA A VITE A USAR LA CARPETA "build"
   },
 })
