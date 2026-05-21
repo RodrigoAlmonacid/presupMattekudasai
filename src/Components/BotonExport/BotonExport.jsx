@@ -15,9 +15,9 @@ export default function BotonExport({ datosGenerales, items }) {
     // 2. Configurar fuentes y Diseñar Cabecera (Datos generales)
     doc.addImage(logo, 'PNG', 14, 12, 25, 15);
     doc.setFont("helvetica", "bold");
-    doc.setFontSize(22);
+    doc.setFontSize(14);
     doc.setTextColor(31, 41, 55); // Color gris oscuro
-    doc.text("PRESUPUESTO", 42, 22);
+    doc.text("PRESUPUESTO", 82, 25);
 
     // Línea decorativa superior
     doc.setDrawColor(37, 99, 235); // Azul primario
@@ -29,10 +29,9 @@ export default function BotonExport({ datosGenerales, items }) {
     doc.setFontSize(10);
     doc.setTextColor(107, 114, 128);
 
-    const fechaFormateada = datosGenerales.fecha || new Date().toISOString().split('T');
-    const horaActual = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+    const fechaFormateada = datosGenerales.fecha || new Date().toLocaleDateString('es-AR').replace(/\//g, '-');
 
-    doc.text(`Fecha: ${fechaFormateada}  |  Hora: ${horaActual}`, 14, 32);
+    doc.text(`Fecha: ${fechaFormateada}`, 14, 32);
 
     // Ajustado a la altura del cuadro del cliente
     // Cuadro destacado para el Cliente

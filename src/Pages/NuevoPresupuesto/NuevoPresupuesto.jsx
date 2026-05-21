@@ -6,7 +6,7 @@ import BotonExport from './../../Components/BotonExport/BotonExport';
 import Observaciones from '../../Components/Observaciones/Observaciones';
 
 export default function NuevoPresupuesto() {
-  const [datosGenerales, setDatosGenerales] = useState({ cliente: '', fecha: new Date().toISOString().split('T')[0], observacionesGenerales: '' });
+  const [datosGenerales, setDatosGenerales] = useState({ cliente: '', fecha: new Date().toLocaleDateString('es-AR').replace(/\//g, '-'), observacionesGenerales: '' });
   const [items, setItems] = useState([]);
 
   // Generamos un ID único para ESTE presupuesto entero apenas se entra a la pantalla
@@ -53,7 +53,7 @@ export default function NuevoPresupuesto() {
   }, [items, datosGenerales, idPresupuesto]); // Se ejecuta cada vez que cambian las líneas o los datos del cliente/vendedor
 
 
-  // Funciones de control (las mismas que ya tenías)
+  // Funciones de control
   const handleDatosGeneralesChange = (e) => {
     const { name, value } = e.target;
     setDatosGenerales({ ...datosGenerales, [name]: value });

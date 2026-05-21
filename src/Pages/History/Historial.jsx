@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import BotonExport from './../../Components/BotonExport/BotonExport'; // ¡Reutilizamos tu super botón!
+import BotonExport from './../../Components/BotonExport/BotonExport';
 import { Ruteo } from '../../const/routes';
 
 export default function Historial() {
@@ -11,8 +11,6 @@ export default function Historial() {
     const datosGuardados = localStorage.getItem('presupMattekudasai');
     return datosGuardados ? JSON.parse(datosGuardados) : [];
   });
-
-  // (El useEffect que estaba acá, lo borrás por completo)
 
   const eliminarDelHistorial = (idParaBorrar) => {
     if (window.confirm("¿Estás segura de que querés borrar este presupuesto?")) {
@@ -54,16 +52,14 @@ export default function Historial() {
                     {presupuesto.fecha}
                   </span>
                 </div>
-                <p className="text-gray-500 text-sm mb-2">
-                  Vendedor: {presupuesto.vendedor} | Ítems: {presupuesto.items.length}
-                </p>
+
                 <p className="text-lg font-bold text-green-600">
                   Total: ${presupuesto.neto.toFixed(2)}
                 </p>
               </div>
 
               {/* ACCIONES */}
-              <div className="flex flex-col sm:flex-row gap-2.5 w-full mt-4">
+              <div className="flex flex-1/2 flex-col sm:flex-row gap-2.5 w-full mt-4">
 
                 {/* BOTÓN: EDITAR */}
                 <Link
@@ -81,7 +77,7 @@ export default function Historial() {
                   🗑️ Eliminar
                 </button>
 
-                {/* BOTÓN: EXPORTAR (Le sacamos el scale raro para que use el mismo ancho) */}
+                {/* BOTÓN: EXPORTAR */}
                 <div className="w-full sm:flex-1">
                   <BotonExport
                     datosGenerales={{
