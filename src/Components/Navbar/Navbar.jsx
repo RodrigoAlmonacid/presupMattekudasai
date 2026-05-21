@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import logo from './../../assets/favicon.png'; // Ajustá la ruta según dónde quedó tu logo
+import logo from './../../assets/favicon.png';
 import { Ruteo } from '../../const/routes';
 
 export default function Navbar() {
@@ -21,7 +21,7 @@ export default function Navbar() {
         {/* CENTRO: Nuevo Presupuesto */}
         <div className="text-center">
           <Link 
-            to={Ruteo.nuevo} // Si usás tu objeto de rutas, poné {Ruteo.nuevo}
+            to={Ruteo.nuevo}
             className="text-sm font-semibold text-gray-600 hover:text-blue-600 bg-gray-50 hover:bg-blue-50 px-3 py-1.5 rounded-lg transition-colors inline-block"
           >
             ✨ Nuevo
@@ -31,7 +31,7 @@ export default function Navbar() {
         {/* DERECHA: Historial */}
         <div className="text-right">
           <Link 
-            to={Ruteo.history} // Si usás tu objeto de rutas, poné {Ruteo.history}
+            to={Ruteo.history}
             className="text-sm font-semibold text-gray-600 hover:text-blue-600 bg-gray-50 hover:bg-blue-50 px-3 py-1.5 rounded-lg transition-colors inline-block"
           >
             📋 Historial

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Ruteo } from '../../const/routes';
 
-export default function Home() { // Supongamos que manejas la página con un estado en App.jsx
+export default function Home() {
   const [mostrarAlerta, setMostrarAlerta] = useState(true);
 
   return (

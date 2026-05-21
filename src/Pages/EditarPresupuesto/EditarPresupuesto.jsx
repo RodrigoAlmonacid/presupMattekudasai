@@ -37,7 +37,6 @@ export default function EditarPresupuesto() {
   useEffect(() => {
     if (items.length === 0) return;
 
-    // Simplificado: Tu hermano solo suma precios directos
     const netoTotal = items.reduce((acc, item) => acc + item.precio, 0);
 
     const historialPrevio = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY)) || [];
@@ -59,7 +58,7 @@ export default function EditarPresupuesto() {
     }
   }, [items, datosGenerales, id]);
 
-  // Manejador para los inputs (en tu primer archivo usabas esta lógica en vez de pasar setters directos)
+  // Manejador para los inputs
   const handleDatosGeneralesChange = (e) => {
     const { name, value } = e.target;
     setDatosGenerales({ ...datosGenerales, [name]: value });
